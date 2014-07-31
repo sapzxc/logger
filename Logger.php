@@ -111,6 +111,11 @@ class Logger {
 	{
 		if(!self::$uid){ self::$uid = uniqid(); }
 		openlog(self::$uid, LOG_ODELAY, self::$logIndex);
+		
+		if(!defined('LOGS_PATH'))
+		{
+			define('LOGS_PATH','/var/log/sapzxc-logger.log');
+		}
 	}
 
 	/**
